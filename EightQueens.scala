@@ -17,7 +17,7 @@ def doesNotAttackQueens(queens: Seq[(Int,Int)])(queen: (Int, Int)): Boolean = qu
 	case Nil => true
 }
 
-//Using straightforward list monad
+//Using straightforward seq monad
 /*********************************/
 def chooseQueensV1(board: Seq[(Int, Int)]) = for {
 	queen1 <- board
@@ -31,7 +31,7 @@ def chooseQueensV1(board: Seq[(Int, Int)]) = for {
 }yield(Seq(queen1, queen2, queen3, queen4, queen5, queen6, queen7, queen8))
 
 
-//Using list monad recursively
+//Using seq monad recursively
 /*****************************/
 def chooseQueensV2(queens: Seq[(Int, Int)], board: Seq[(Int, Int)], size: Int): Seq[(Int, Int)]
 	= queens.length match {
