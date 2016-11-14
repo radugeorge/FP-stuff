@@ -60,10 +60,10 @@
       ((bool t) f))))
 
 (define (is-zero fn)
-  (fn (lambda (u) false)) true)
+  ((fn (lambda (u) false)) true))
 
 (define (fact fn)
-  (((ifte ((fn (lambda (u) false)) true)) one) ((mul fn) (fact (decr fn)))))
+  (((ifte (is-zero fn)) one) ((mul fn) (fact (decr fn)))))
 
 (define (to-int-repr fn)
   ((fn (lambda (x)
