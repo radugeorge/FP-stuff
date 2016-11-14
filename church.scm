@@ -1,4 +1,3 @@
-;#lang racket
 #lang lazy
 
 ; Number representation
